@@ -1,0 +1,262 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* 
+Using an ID here for practice, not all navs may be the same.
+If they were the same, simply use "nav" instead of "#primary-navbar"
+*/
+.navbar {
+  background-color: #3b3b3b;
+  height: 5vh; /* offset with next section (not quite perfect but whatever) */
+  color: white; /* default color for elements */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navbar a {
+  padding: 0px 32px;
+}
+
+/* Make the footer and the navbar essentially the same. */
+.footer {
+  background-color: #3b3b3b;
+  color: white;
+  height: 5vh;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0px 16px;
+}
+
+.footer a {
+  padding: 0px 16px;
+}
+
+/* Style classes */
+.index-splash {
+  height: 90vh;
+  margin-bottom: 5vh;
+  /* adding image here, with details */
+
+  /* 
+    I know this code is a bit out of scope for the project, but...
+    The background image replicates a fade by applying a gradient of 0->1 on its alpha channel.
+  */
+  background-image: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.1)), url("../images/rocket_launch.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: #f2f2f2; /* fallback color, also counting for changing color req. */
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.index-splash h1 {
+  font-size: 3em;
+}
+
+.index-splash h2 {
+  font-size: 2em;
+}
+
+.index-cv-area {
+  background-color: #ffffff;
+  padding: 20px 10vw; /* 20% padding on left and right, shrink hr and elements inside. */
+  text-align: center;
+  align-items: center;
+}
+
+.mugshot {
+  width: 20vw;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px #939292; /* add shadow to image */
+  margin-bottom: 2vh
+}
+
+.circ-img-border {
+  border-radius: 50%;
+  border: 3px solid #000000;
+}
+
+.three-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Defines three columns */
+  gap: 1vw; /* Space between columns */
+}
+
+.three-col .card {
+  padding: 0.7vw;
+  background-color: #f2f2f2;
+  border-radius: 10px; /* rounded corners */
+  align-items: center;
+  text-align: center;
+}
+
+.three-col .card img {
+  width: 100%; /* scale to card */
+  height: auto;
+  border-radius: 10px; /* rounded corners */
+  box-shadow: 0px 0px 5px #545454 /* add shadow to image, makes them pop a bit */;
+}
+
+h1,
+h2,
+h3,
+p,
+dt,
+dd,
+ul,
+input,
+textarea,
+label {
+  font-family: "Courier New", Courier, monospace; /* pick the font */
+}
+
+h1,
+h2,
+h3 {
+  font-weight: bold;
+}
+
+p,
+dt,
+dd,
+ul {
+  font-size: 1.2em;
+}
+
+h1,
+h2 {
+  text-shadow: 2px 2px 2px #c8c8c8;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
+}
+h3 {
+  font-size: 1.8em;
+  color: #343434;
+}
+
+/* styling all links */
+a {
+  font-family: "Courier", monospace; /* 2nd font */
+  font-weight: normal; /* normal, not bold or italicized */
+  color: rgb(53, 137, 254); /* default color */
+  text-decoration: none; /* remove underline */
+  transition: color 0.3s;
+}
+
+/* do all links on hover */
+a:hover {
+  color: #d65a5a;
+}
+
+/* Border props for hr */
+hr {
+  border: 0;
+  height: 2px; /* thickness */
+  background: #333; /* color */
+  /* 
+    apply similar logic to above bg img, but simpler 
+    to right = horizontal, start at ccc, mid is 333, then end at ccc
+    */
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
+  margin: 0px 0; /* offsets top/bottom, 0 px for left/right */
+}
+
+/* Edit li and dl to have a bit more space between elements */
+li,
+dl {
+  text-indent: 0;
+  align-items: center;
+  display: grid;
+}
+
+li,
+dl,
+dd {
+  margin-bottom: 10px;
+}
+ul,
+dd {
+  padding-left: 0;
+  margin-left: 0;
+}
+
+/* contact.html specific */
+
+.one-col {
+  display: grid;
+  grid-template-columns: 1fr; /* Defines one column */
+  gap: 1vw; /* Space between columns */
+}
+
+#main-area {
+  background-image: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.1)), url("../images/rocket_launch.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: #f2f2f2; /* fallback color, also counting for changing color req. */
+  height: 90vh;
+  max-height: 90vh;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#contact-body .card .two-col {
+  display: grid;
+  grid-template-columns: 1fr 3fr; /* Defines one column */
+  gap: 1vw; /* Space between columns */
+  justify-items: center;
+}
+
+#contact-body .card .two-col input,
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#static-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 10vw; /* 20% padding on left and right, shrink hr and elements inside. */
+  text-align: center;
+}
+
+#contact-form {
+  border-radius: 10px;
+  border: 2px solid #000000;
+  background-color: white;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 20px; /* 20% padding on left and right, shrink hr and elements inside. */
+  text-align: center;
+  max-height: 50vh;
+  width: auto;
+}
+
+#static-info p {
+  font-size: 1.5em;
+  font-weight: bold;
+}
